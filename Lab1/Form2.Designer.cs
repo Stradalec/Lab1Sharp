@@ -30,26 +30,32 @@
         {
             this.pvGraph = new OxyPlot.WindowsForms.PlotView();
             this.function = new System.Windows.Forms.TextBox();
-            this.DrawButton = new System.Windows.Forms.Button();
             this.FirstIntervalLimitation = new System.Windows.Forms.TextBox();
             this.SecondIntervalLimitation = new System.Windows.Forms.TextBox();
             this.functionLabel = new System.Windows.Forms.Label();
             this.limitationLabel = new System.Windows.Forms.Label();
             this.leftLabel = new System.Windows.Forms.Label();
             this.rightLabel = new System.Windows.Forms.Label();
-            this.SetIntervalButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.epsilonBox = new System.Windows.Forms.TextBox();
             this.LimitationBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.resultBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.interval = new System.Windows.Forms.TextBox();
+            this.functionLimitBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pvGraph
             // 
-            this.pvGraph.Location = new System.Drawing.Point(312, 12);
+            this.pvGraph.Location = new System.Drawing.Point(312, 30);
             this.pvGraph.Name = "pvGraph";
             this.pvGraph.PanCursor = System.Windows.Forms.Cursors.Hand;
             this.pvGraph.Size = new System.Drawing.Size(476, 413);
@@ -61,25 +67,15 @@
             // 
             // function
             // 
-            this.function.Location = new System.Drawing.Point(30, 29);
+            this.function.Location = new System.Drawing.Point(24, 56);
             this.function.Name = "function";
             this.function.Size = new System.Drawing.Size(276, 20);
             this.function.TabIndex = 3;
             this.function.Text = "x +1";
             // 
-            // DrawButton
-            // 
-            this.DrawButton.Location = new System.Drawing.Point(231, 55);
-            this.DrawButton.Name = "DrawButton";
-            this.DrawButton.Size = new System.Drawing.Size(75, 23);
-            this.DrawButton.TabIndex = 4;
-            this.DrawButton.Text = "Построить";
-            this.DrawButton.UseVisualStyleBackColor = true;
-            this.DrawButton.Click += new System.EventHandler(this.DrawButton_Click);
-            // 
             // FirstIntervalLimitation
             // 
-            this.FirstIntervalLimitation.Location = new System.Drawing.Point(30, 125);
+            this.FirstIntervalLimitation.Location = new System.Drawing.Point(24, 230);
             this.FirstIntervalLimitation.Name = "FirstIntervalLimitation";
             this.FirstIntervalLimitation.Size = new System.Drawing.Size(69, 20);
             this.FirstIntervalLimitation.TabIndex = 5;
@@ -87,7 +83,7 @@
             // 
             // SecondIntervalLimitation
             // 
-            this.SecondIntervalLimitation.Location = new System.Drawing.Point(121, 125);
+            this.SecondIntervalLimitation.Location = new System.Drawing.Point(115, 230);
             this.SecondIntervalLimitation.Name = "SecondIntervalLimitation";
             this.SecondIntervalLimitation.Size = new System.Drawing.Size(69, 20);
             this.SecondIntervalLimitation.TabIndex = 6;
@@ -96,7 +92,7 @@
             // functionLabel
             // 
             this.functionLabel.AutoSize = true;
-            this.functionLabel.Location = new System.Drawing.Point(30, 10);
+            this.functionLabel.Location = new System.Drawing.Point(24, 37);
             this.functionLabel.Name = "functionLabel";
             this.functionLabel.Size = new System.Drawing.Size(83, 13);
             this.functionLabel.TabIndex = 7;
@@ -105,7 +101,7 @@
             // limitationLabel
             // 
             this.limitationLabel.AutoSize = true;
-            this.limitationLabel.Location = new System.Drawing.Point(74, 83);
+            this.limitationLabel.Location = new System.Drawing.Point(68, 188);
             this.limitationLabel.Name = "limitationLabel";
             this.limitationLabel.Size = new System.Drawing.Size(132, 13);
             this.limitationLabel.TabIndex = 8;
@@ -114,7 +110,7 @@
             // leftLabel
             // 
             this.leftLabel.AutoSize = true;
-            this.leftLabel.Location = new System.Drawing.Point(30, 109);
+            this.leftLabel.Location = new System.Drawing.Point(24, 214);
             this.leftLabel.Name = "leftLabel";
             this.leftLabel.Size = new System.Drawing.Size(39, 13);
             this.leftLabel.TabIndex = 9;
@@ -123,33 +119,15 @@
             // rightLabel
             // 
             this.rightLabel.AutoSize = true;
-            this.rightLabel.Location = new System.Drawing.Point(118, 109);
+            this.rightLabel.Location = new System.Drawing.Point(112, 214);
             this.rightLabel.Name = "rightLabel";
             this.rightLabel.Size = new System.Drawing.Size(45, 13);
             this.rightLabel.TabIndex = 10;
             this.rightLabel.Text = "Правое";
             // 
-            // SetIntervalButton
-            // 
-            this.SetIntervalButton.Location = new System.Drawing.Point(221, 122);
-            this.SetIntervalButton.Name = "SetIntervalButton";
-            this.SetIntervalButton.Size = new System.Drawing.Size(75, 23);
-            this.SetIntervalButton.TabIndex = 11;
-            this.SetIntervalButton.Text = "Задать";
-            this.SetIntervalButton.UseVisualStyleBackColor = true;
-            this.SetIntervalButton.Click += new System.EventHandler(this.SetIntervalButton_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "x +1";
-            // 
             // epsilonBox
             // 
-            this.epsilonBox.Location = new System.Drawing.Point(30, 181);
+            this.epsilonBox.Location = new System.Drawing.Point(24, 286);
             this.epsilonBox.Name = "epsilonBox";
             this.epsilonBox.Size = new System.Drawing.Size(69, 20);
             this.epsilonBox.TabIndex = 13;
@@ -157,7 +135,7 @@
             // 
             // LimitationBox
             // 
-            this.LimitationBox.Location = new System.Drawing.Point(30, 235);
+            this.LimitationBox.Location = new System.Drawing.Point(24, 340);
             this.LimitationBox.Name = "LimitationBox";
             this.LimitationBox.Size = new System.Drawing.Size(69, 20);
             this.LimitationBox.TabIndex = 14;
@@ -166,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 165);
+            this.label1.Location = new System.Drawing.Point(24, 270);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 15;
@@ -175,53 +153,135 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 219);
+            this.label2.Location = new System.Drawing.Point(21, 324);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Необходимая точность (число знаков после запятой)";
             // 
-            // resultBox
+            // interval
             // 
-            this.resultBox.Location = new System.Drawing.Point(30, 326);
-            this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(69, 20);
-            this.resultBox.TabIndex = 17;
-            this.resultBox.Text = "0";
+            this.interval.Location = new System.Drawing.Point(169, 117);
+            this.interval.Name = "interval";
+            this.interval.Size = new System.Drawing.Size(69, 20);
+            this.interval.TabIndex = 19;
+            this.interval.Text = "0";
             // 
-            // label3
+            // functionLimitBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 300);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Результат";
+            this.functionLimitBox.Location = new System.Drawing.Point(24, 114);
+            this.functionLimitBox.Name = "functionLimitBox";
+            this.functionLimitBox.Size = new System.Drawing.Size(69, 20);
+            this.functionLimitBox.TabIndex = 20;
+            this.functionLimitBox.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Число точек построения";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(169, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "осей";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "функции (отриц. сторона)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "функции (полож. сторона)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(24, 164);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(69, 20);
+            this.textBox1.TabIndex = 25;
+            this.textBox1.Text = "0";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripTextBox2});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
+            this.menuStrip1.TabIndex = 26;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "Построить";
+            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.ReadOnly = true;
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox2.Text = "Задать";
+            this.toolStripTextBox2.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
             // 
             // dichotomyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.resultBox);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.functionLimitBox);
+            this.Controls.Add(this.interval);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LimitationBox);
             this.Controls.Add(this.epsilonBox);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.SetIntervalButton);
             this.Controls.Add(this.rightLabel);
             this.Controls.Add(this.leftLabel);
             this.Controls.Add(this.limitationLabel);
             this.Controls.Add(this.functionLabel);
             this.Controls.Add(this.SecondIntervalLimitation);
             this.Controls.Add(this.FirstIntervalLimitation);
-            this.Controls.Add(this.DrawButton);
             this.Controls.Add(this.function);
             this.Controls.Add(this.pvGraph);
+            this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "dichotomyForm";
             this.Text = "Метод Дихотомии";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,20 +290,25 @@
         #endregion
         public OxyPlot.WindowsForms.PlotView pvGraph;
         private System.Windows.Forms.TextBox function;
-        private System.Windows.Forms.Button DrawButton;
         private System.Windows.Forms.TextBox FirstIntervalLimitation;
         private System.Windows.Forms.TextBox SecondIntervalLimitation;
         private System.Windows.Forms.Label functionLabel;
         private System.Windows.Forms.Label limitationLabel;
         private System.Windows.Forms.Label leftLabel;
         private System.Windows.Forms.Label rightLabel;
-        private System.Windows.Forms.Button SetIntervalButton;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox epsilonBox;
         private System.Windows.Forms.TextBox LimitationBox;
         internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox resultBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox interval;
+        private System.Windows.Forms.TextBox functionLimitBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
     }
 }

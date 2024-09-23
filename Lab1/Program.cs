@@ -12,13 +12,14 @@ namespace Lab1
 {
     interface IView
     {
+        double Interval();
         double firstSide();
         double secondSide();
         double epsilon();
         Expression Expression();
 
         Function Function();
-        void ShowResult(double[] input);
+        void ShowResult(double input, double errorCheck);
 
         event EventHandler<EventArgs> StartDichotomy;
     }
@@ -27,55 +28,56 @@ namespace Lab1
     // Модель. Основная часть работы программы происходит здесь
     class Model
     {
-        public double[] Dichotomy(Function inputFunction, Expression inputExpression, double leftLimitation, double rightLimitation, double epsilon)
+        public (double, double) Dichotomy(Function inputFunction, Expression inputExpression, double leftLimitation, double rightLimitation, double epsilon)
         {
-            bool isFind = false;
-            double[] outputArray = new double[2];
+            double result = 0;
+            double currentResult = 0;
+            double errorCheck;
 
-            inputExpression = new Expression($"f({leftLimitation})", inputFunction);
 
-            inputFunction.checkSyntax();
-            inputExpression.setArgumentValue("x", leftLimitation);
-            double firstValue = inputExpression.calculate();
+            double firstValue = SolveFunc(inputFunction, leftLimitation.ToString().Replace(",", "."));
 
-            inputExpression = new Expression($"f({rightLimitation})", inputFunction);
-            inputExpression.setArgumentValue("x", rightLimitation);
-            double secondValue = inputExpression.calculate();
+            double secondValue = SolveFunc(inputFunction, rightLimitation.ToString().Replace(",", "."));
             
             if (firstValue * secondValue >= 0)
             {
-                outputArray[1] = 1;
+                errorCheck = 1;
+                return(result,errorCheck);
             }
             else
             {
-                outputArray[1] = 0;
+                errorCheck = 0;
             }
 
-            while ((rightLimitation - leftLimitation) >= epsilon && !isFind)
+            while ((rightLimitation - leftLimitation) >= epsilon)
             {
-                double currentResult = (leftLimitation + rightLimitation) / 2;
+                currentResult = (leftLimitation + rightLimitation) / 2;
+                double position = SolveFunc(inputFunction, currentResult.ToString().Replace(",", "."));
 
-                inputExpression = new Expression($"f({currentResult})", inputFunction);
-                inputExpression.setArgumentValue("x", currentResult);
-                inputExpression.checkSyntax();
-
-                if (inputExpression.calculate() == 0) // Найден точный корень
+                if (position == 0) // Найден точный корень
                 {
-                    outputArray[0] = currentResult;
-                    isFind = true;
+                    result = currentResult;
+                    return (result, errorCheck);
                 }
-                else if (firstValue  * inputExpression.calculate() < 0) // Корень в левой половине интервала
+                else if (firstValue  * position < 0) // Корень в левой половине интервала
                 {
                     rightLimitation = currentResult;
+                    secondValue = SolveFunc(inputFunction, rightLimitation.ToString().Replace(",", "."));
                 }
                 else // Корень в правой половине интервала
                 {
                     leftLimitation = currentResult;
+                    firstValue = SolveFunc(inputFunction, leftLimitation.ToString().Replace(",", "."));
                 }
             }
-
+            result = currentResult;
             
-            return outputArray;
+            return (result, errorCheck);
+        }
+
+        public double SolveFunc(Function function, string x)
+        {
+            return new org.mariuszgromada.math.mxparser.Expression($"f({x})", function).calculate();
         }
     }
 
@@ -94,8 +96,8 @@ namespace Lab1
 
         private void Dichotomy(object sender, EventArgs inputEvent)
         {
-            double[] output = model.Dichotomy(mainView.Function(),mainView.Expression(), mainView.firstSide(), mainView.secondSide(), mainView.epsilon());
-            mainView.ShowResult(output);
+            var output = model.Dichotomy(mainView.Function(),mainView.Expression(), mainView.firstSide(), mainView.secondSide(), mainView.epsilon());
+            mainView.ShowResult(output.Item1, output.Item2);
         }
     }
     internal static class Program
