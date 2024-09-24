@@ -75,7 +75,7 @@
             // 
             // FirstIntervalLimitation
             // 
-            this.FirstIntervalLimitation.Location = new System.Drawing.Point(24, 230);
+            this.FirstIntervalLimitation.Location = new System.Drawing.Point(24, 279);
             this.FirstIntervalLimitation.Name = "FirstIntervalLimitation";
             this.FirstIntervalLimitation.Size = new System.Drawing.Size(69, 20);
             this.FirstIntervalLimitation.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             // SecondIntervalLimitation
             // 
-            this.SecondIntervalLimitation.Location = new System.Drawing.Point(115, 230);
+            this.SecondIntervalLimitation.Location = new System.Drawing.Point(115, 279);
             this.SecondIntervalLimitation.Name = "SecondIntervalLimitation";
             this.SecondIntervalLimitation.Size = new System.Drawing.Size(69, 20);
             this.SecondIntervalLimitation.TabIndex = 6;
@@ -92,7 +92,7 @@
             // functionLabel
             // 
             this.functionLabel.AutoSize = true;
-            this.functionLabel.Location = new System.Drawing.Point(24, 37);
+            this.functionLabel.Location = new System.Drawing.Point(21, 40);
             this.functionLabel.Name = "functionLabel";
             this.functionLabel.Size = new System.Drawing.Size(83, 13);
             this.functionLabel.TabIndex = 7;
@@ -101,7 +101,7 @@
             // limitationLabel
             // 
             this.limitationLabel.AutoSize = true;
-            this.limitationLabel.Location = new System.Drawing.Point(68, 188);
+            this.limitationLabel.Location = new System.Drawing.Point(77, 240);
             this.limitationLabel.Name = "limitationLabel";
             this.limitationLabel.Size = new System.Drawing.Size(132, 13);
             this.limitationLabel.TabIndex = 8;
@@ -110,7 +110,7 @@
             // leftLabel
             // 
             this.leftLabel.AutoSize = true;
-            this.leftLabel.Location = new System.Drawing.Point(24, 214);
+            this.leftLabel.Location = new System.Drawing.Point(24, 263);
             this.leftLabel.Name = "leftLabel";
             this.leftLabel.Size = new System.Drawing.Size(39, 13);
             this.leftLabel.TabIndex = 9;
@@ -119,7 +119,7 @@
             // rightLabel
             // 
             this.rightLabel.AutoSize = true;
-            this.rightLabel.Location = new System.Drawing.Point(112, 214);
+            this.rightLabel.Location = new System.Drawing.Point(112, 263);
             this.rightLabel.Name = "rightLabel";
             this.rightLabel.Size = new System.Drawing.Size(45, 13);
             this.rightLabel.TabIndex = 10;
@@ -127,7 +127,7 @@
             // 
             // epsilonBox
             // 
-            this.epsilonBox.Location = new System.Drawing.Point(24, 286);
+            this.epsilonBox.Location = new System.Drawing.Point(197, 279);
             this.epsilonBox.Name = "epsilonBox";
             this.epsilonBox.Size = new System.Drawing.Size(69, 20);
             this.epsilonBox.TabIndex = 13;
@@ -135,7 +135,7 @@
             // 
             // LimitationBox
             // 
-            this.LimitationBox.Location = new System.Drawing.Point(24, 340);
+            this.LimitationBox.Location = new System.Drawing.Point(115, 340);
             this.LimitationBox.Name = "LimitationBox";
             this.LimitationBox.Size = new System.Drawing.Size(69, 20);
             this.LimitationBox.TabIndex = 14;
@@ -144,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 270);
+            this.label1.Location = new System.Drawing.Point(197, 263);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 15;
@@ -161,7 +161,7 @@
             // 
             // interval
             // 
-            this.interval.Location = new System.Drawing.Point(169, 117);
+            this.interval.Location = new System.Drawing.Point(178, 145);
             this.interval.Name = "interval";
             this.interval.Size = new System.Drawing.Size(69, 20);
             this.interval.TabIndex = 19;
@@ -169,7 +169,7 @@
             // 
             // functionLimitBox
             // 
-            this.functionLimitBox.Location = new System.Drawing.Point(24, 114);
+            this.functionLimitBox.Location = new System.Drawing.Point(33, 142);
             this.functionLimitBox.Name = "functionLimitBox";
             this.functionLimitBox.Size = new System.Drawing.Size(69, 20);
             this.functionLimitBox.TabIndex = 20;
@@ -178,7 +178,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 82);
+            this.label4.Location = new System.Drawing.Point(77, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 13);
             this.label4.TabIndex = 21;
@@ -187,7 +187,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(169, 98);
+            this.label5.Location = new System.Drawing.Point(178, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 22;
@@ -196,7 +196,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 98);
+            this.label6.Location = new System.Drawing.Point(30, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 13);
             this.label6.TabIndex = 23;
@@ -205,7 +205,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 146);
+            this.label7.Location = new System.Drawing.Point(30, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 13);
             this.label7.TabIndex = 24;
@@ -213,7 +213,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 164);
+            this.textBox1.Location = new System.Drawing.Point(33, 192);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(69, 20);
             this.textBox1.TabIndex = 25;
