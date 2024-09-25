@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using org.mariuszgromada.math.mxparser;
 using LiveCharts.Wpf.Charts.Base;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace Lab1
 {
@@ -20,10 +22,90 @@ namespace Lab1
     {
         private Expression expression;
         private Function Function;
+
+        private Size formOriginalSize;
+        private Rectangle recCalculateButton;
+        private Rectangle recFunctionTextBox;
+        private Rectangle recGraph;
+        private Rectangle recLabel1;
+        private Rectangle recLabel2;
+        private Rectangle recLabel3;
+        private Rectangle recLabel4;
+        private Rectangle recLabel5;
+        private Rectangle recLabel6;
+        private Rectangle recLabel7;
+        private Rectangle recLimitationLabel;
+        private Rectangle recLeftLabel;
+        private Rectangle recRightLabel;
+        private Rectangle recTextBoxA;
+        private Rectangle recTextBoxB;
+        private Rectangle recTextBoxE;
+        private Rectangle recTextBoxF;
+        private Rectangle recTextBoxG;
+        private Rectangle recTextBoxH;
+        private Rectangle recTextBoxV;
         public dichotomyForm()
         {
             InitializeComponent();
             Presenter presenter = new Presenter(this);
+            this.Resize += DichotomyForm_Resize;
+            formOriginalSize = this.Size;
+            recFunctionTextBox = new Rectangle(function.Location, function.Size);
+            recGraph = new Rectangle(pvGraph.Location, pvGraph.Size);
+            recLabel1 = new Rectangle(label1.Location, label1.Size);
+            recLabel2 = new Rectangle(label2.Location, label2.Size);
+            recLabel3 = new Rectangle(functionLabel.Location, functionLabel.Size);
+            recLabel4 = new Rectangle(label4.Location, label4.Size);
+            recLabel5 = new Rectangle(label5.Location, label5.Size);
+            recLabel6 = new Rectangle(label6.Location, label6.Size);
+            recLabel7 = new Rectangle(label7.Location, label7.Size);
+            recLimitationLabel = new Rectangle(limitationLabel.Location, limitationLabel.Size);
+            recLeftLabel = new Rectangle(leftLabel.Location, leftLabel.Size);
+            recRightLabel = new Rectangle(rightLabel.Location, rightLabel.Size);
+            recTextBoxA = new Rectangle(interval.Location, interval.Size);
+            recTextBoxB = new Rectangle(functionLimitBox.Location, functionLimitBox.Size);
+            recTextBoxE = new Rectangle(textBox1.Location, textBox1.Size);
+            recTextBoxF = new Rectangle(FirstIntervalLimitation.Location, FirstIntervalLimitation.Size);
+            recTextBoxG = new Rectangle(SecondIntervalLimitation.Location, SecondIntervalLimitation.Size);
+            recTextBoxH = new Rectangle(epsilonBox.Location, epsilonBox.Size);
+            recTextBoxV = new Rectangle(LimitationBox.Location, LimitationBox.Size);
+        }
+        private void AutoResize(Control control, Rectangle rectangle)
+        {
+            double xRatio = (double)(this.Width) / (double)(formOriginalSize.Width);
+            double yRatio = (double)(this.Height) / (double)(formOriginalSize.Height);
+            int newX = (int)(rectangle.X * xRatio);
+            int newY = (int)(rectangle.Y * yRatio);
+
+            int newWidth = (int)(rectangle.Width * xRatio);
+            int newHeight = (int)(rectangle.Height * yRatio);
+
+            control.Location = new Point(newX, newY);
+            control.Size = new Size(newWidth, newHeight);
+        }
+
+        private void DichotomyForm_Resize(object sender, EventArgs e)
+        {
+            AutoResize(function, recFunctionTextBox);
+            AutoResize(pvGraph, recGraph);
+            AutoResize(label1, recLabel1);
+            AutoResize(label2, recLabel2);
+            AutoResize(functionLabel, recLabel3);
+            AutoResize(label4, recLabel4);
+            AutoResize(label5, recLabel5);
+            AutoResize(label6, recLabel6);
+            AutoResize(label7, recLabel7);
+            AutoResize(limitationLabel, recLimitationLabel);
+            AutoResize(leftLabel, recLeftLabel);
+            AutoResize(rightLabel, recRightLabel);
+            AutoResize(interval, recTextBoxA);
+            AutoResize(functionLimitBox, recTextBoxB);
+            AutoResize(textBox1, recTextBoxE);
+            AutoResize(FirstIntervalLimitation, recTextBoxF);
+            AutoResize(SecondIntervalLimitation, recTextBoxG);
+            AutoResize(epsilonBox, recTextBoxH);
+            AutoResize(LimitationBox, recTextBoxV);
+
         }
 
         double IView.firstSide() 
