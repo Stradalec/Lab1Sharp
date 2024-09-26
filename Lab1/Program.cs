@@ -63,18 +63,9 @@ namespace Lab1
             }
             result = currentResult;
 
-            if (firstValue * secondValue >= 0)
+            if (firstValue * secondValue > 0)
             {
                 errorCheck = 1;
-                if(double.IsNaN(result) == false)
-                {
-                    return (result, errorCheck);
-                }
-                else
-                {
-                    return (result, 0);
-                }
-                
             }
             else
             {
