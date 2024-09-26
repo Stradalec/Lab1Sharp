@@ -44,6 +44,7 @@ namespace Lab1
         private Rectangle recTextBoxG;
         private Rectangle recTextBoxH;
         private Rectangle recTextBoxV;
+
         public dichotomyForm()
         {
             InitializeComponent();

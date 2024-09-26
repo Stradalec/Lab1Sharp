@@ -30,31 +30,22 @@ namespace Lab1
     {
         public (double, double) Dichotomy(Function inputFunction, Expression inputExpression, double leftLimitation, double rightLimitation, double epsilon)
         {
-            double result = 0;
+            double result = double.NaN;
             double currentResult = 0;
-            double errorCheck;
+            double errorCheck = 0;
 
 
             double firstValue = SolveFunc(inputFunction, leftLimitation.ToString().Replace(",", "."));
 
             double secondValue = SolveFunc(inputFunction, rightLimitation.ToString().Replace(",", "."));
-            
-            if (firstValue * secondValue >= 0)
-            {
-                errorCheck = 1;
-                return(result,errorCheck);
-            }
-            else
-            {
-                errorCheck = 0;
-            }
+                       
 
             while ((rightLimitation - leftLimitation) >= epsilon)
             {
                 currentResult = (leftLimitation + rightLimitation) / 2;
                 double position = SolveFunc(inputFunction, currentResult.ToString().Replace(",", "."));
 
-                if (position == 0) // Найден точный корень
+                if (Math.Abs(position) == 0) // Найден точный корень
                 {
                     result = currentResult;
                     return (result, errorCheck);
@@ -71,7 +62,25 @@ namespace Lab1
                 }
             }
             result = currentResult;
-            
+
+            if (firstValue * secondValue >= 0)
+            {
+                errorCheck = 1;
+                if(double.IsNaN(result) == false)
+                {
+                    return (result, errorCheck);
+                }
+                else
+                {
+                    return (result, 0);
+                }
+                
+            }
+            else
+            {
+                errorCheck = 0;
+            }
+
             return (result, errorCheck);
         }
 
